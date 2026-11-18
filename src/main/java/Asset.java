@@ -5,14 +5,14 @@ public class Asset {
     private String dateAcquired;
     private BigDecimal originalCost;
 
-    public Asset(String description, String dateAcquired, BigDecimal originalCost) {
+    public Asset(String description, String dateAcquired, int originalCost) {
         this.description = description;
         this.dateAcquired = dateAcquired;
-        this.originalCost = originalCost;
+        this.originalCost = BigDecimal.valueOf(originalCost);
     }
 
     public BigDecimal getValue() {
-        return originalCost;
+        return this.originalCost;
     }
 
     public String getDescription() {
@@ -29,5 +29,9 @@ public class Asset {
 
     public void setDateAcquired(String dateAcquired) {
         this.dateAcquired = dateAcquired;
+    }
+
+    public BigDecimal getOriginalCost() {
+        return originalCost;
     }
 }
